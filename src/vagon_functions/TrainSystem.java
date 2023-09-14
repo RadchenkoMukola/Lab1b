@@ -6,8 +6,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class TrainSystem {
-    private static final String TOTAL_DURATION = "Total capacity of all vagons: ";
-    private Double duration = 0.0;
+    private static final String TOTAL_CAP = "Total capacity of all vagons: ";
+    private Double capacity = 0.0;
 
     public void getAllVagons(List<Vagon> vagons) {
         for(Vagon vagon : vagons)
@@ -24,7 +24,7 @@ public class TrainSystem {
             baggage += vagons.get(i).getOcupancy().getBaggage();
         }
         Vagoncapacity buff = new Vagoncapacity("Totaloccupancy", passengers, baggage);
-        System.out.println(TOTAL_DURATION + buff.toString() + '\n');
+        System.out.println(TOTAL_CAP + buff.toString() + '\n');
     }
 
     public void SortByComfort(List<Vagon> vagons)
