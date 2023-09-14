@@ -22,8 +22,8 @@ public class Train {
         vagons.add(new Vagon("Vagon-7", 3, 28, 34.0));
         vagons.add(new Vagon("Vagon-8", 5, 49, 100.0));
 
-        system.getTracks(vagons);
-        system.getTotalDuration(vagons);
+        system.getAllVagons(vagons);
+        system.getTotalCap(vagons);
         system.SortByComfort(vagons);
         Vagoncapacity min = new Vagoncapacity("mincap",2,20);
         Vagoncapacity max = new Vagoncapacity("maxcap",3,40);

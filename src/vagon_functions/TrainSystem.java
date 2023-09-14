@@ -9,13 +9,13 @@ public class TrainSystem {
     private static final String TOTAL_DURATION = "Total capacity of all vagons: ";
     private Double duration = 0.0;
 
-    public void getTracks(List<Vagon> vagons) {
+    public void getAllVagons(List<Vagon> vagons) {
         for(Vagon vagon : vagons)
             System.out.println(vagon.toString());
         System.out.println();
     }
 
-    public void getTotalDuration(List<Vagon> vagons){
+    public void getTotalCap(List<Vagon> vagons){
         System.out.println("Get total ammout of cargo method.");
         Integer passengers = 0;
         Integer baggage = 0;
