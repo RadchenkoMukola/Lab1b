@@ -38,30 +38,33 @@ public class TrainSystem {
         }
         System.out.println();
     }
-    public void findByCapacity(Vagoncapacity min, Vagoncapacity max, List<Vagon> vagons){
+    public void findByCapacity(Vagoncapacity min, Vagoncapacity max,  List<Vagon> vagons){
         System.out.println("Find vagons with set Capacity method.");
         Boolean isEmpty = true;
         for(int i = 0; i < vagons.size(); i++){
 
-            Integer vagonToFind = 0;
-            vagonToFind += vagons.get(i).getOcupancy().getPassengers();
-            vagonToFind += vagons.get(i).getOcupancy().getBaggage();
+            Integer vagonToFind1 = 0;
+            Integer vagonToFind2 = 0;
+            vagonToFind1 += vagons.get(i).getOcupancy().getPassengers();
+            vagonToFind2 += vagons.get(i).getOcupancy().getBaggage();
 
-            Integer startSum = 0;
-            startSum += min.getPassengers();
-            startSum += min.getBaggage();
+            Integer startSum1 = 0;
+            Integer startSum2 = 0;
+            startSum1 += min.getPassengers();
+            startSum2 += min.getBaggage();
 
-            Integer finishSum = 0;
-            finishSum += max.getPassengers();
-            finishSum += max.getBaggage();
+            Integer finishSum1 = 0;
+            Integer finishSum2 = 0;
+            finishSum1 += max.getPassengers();
+            finishSum2 += max.getBaggage();
 
-            if(vagonToFind >= startSum && vagonToFind <= finishSum) {
+            if(vagonToFind1 >= startSum1 && vagonToFind1 <= finishSum1 && vagonToFind2 >= startSum2 && vagonToFind2 <= finishSum2) {
                 System.out.println(vagons.get(i).toString());
                 isEmpty = false;
             }
         }
         if(isEmpty){
-            System.out.println("There are no such vagons that would match your condition (>" + min.toString() + ", <" + max.toString() + ")");
+            System.out.println("There are no such vagons that would match your condition");
         }
     }
 }

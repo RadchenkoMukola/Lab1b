@@ -1,6 +1,8 @@
 package train;
 
 
+import vagon.Intercity;
+import vagon.Plac;
 import vagon.Vagon;
 import vagon.Vagoncapacity;
 import vagon_functions.TrainSystem;
@@ -13,20 +15,18 @@ public class Train {
     private TrainSystem system = new TrainSystem();
 
     public Train() {
-        vagons.add(new Vagon("Vagon-1", 2, 6, 76.0));
-        vagons.add(new Vagon("Vagon-2", 2, 49, 13.0));
-        vagons.add(new Vagon("Vagon-3", 4,13, 24.0));
-        vagons.add(new Vagon("Vagon-4", 2, 37, 47.0));
-        vagons.add(new Vagon("Vagon-5", 3, 32, 88.0));
-        vagons.add(new Vagon("Vagon-6", 4, 9, 56.0));
-        vagons.add(new Vagon("Vagon-7", 3, 28, 34.0));
-        vagons.add(new Vagon("Vagon-8", 5, 49, 100.0));
+
+
+        vagons.add(new Intercity("Vagon-1",10,90,70.0));
+        vagons.add(new Plac("Vagon-2",80,50,40.0));
+        vagons.add(new Intercity("Vagon-3",60,60,55.0));
+        vagons.add(new Plac("Vagon-4",30,40,12.0));
 
         system.getAllVagons(vagons);
         system.getTotalCap(vagons);
         system.SortByComfort(vagons);
-        Vagoncapacity min = new Vagoncapacity("mincap",2,20);
-        Vagoncapacity max = new Vagoncapacity("maxcap",3,40);
+        Vagoncapacity min = new Vagoncapacity("mincap",10,20);
+        Vagoncapacity max = new Vagoncapacity("maxcap",70,60);
         system.findByCapacity(min, max, vagons);
     }
 }
